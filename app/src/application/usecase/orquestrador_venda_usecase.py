@@ -1,5 +1,3 @@
-# app/application/orquestrador_venda.py
-
 from src.domain.venda import Venda
 from src.domain.enum.venda_status import VendaStatus
 from src.adapters.output.repository.repository import Repository
