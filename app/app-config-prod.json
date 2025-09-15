@@ -1,0 +1,6 @@
+{
+    "database": {
+        "db_url": "mongodb://admin:password123@mongodb:27017/soat_veiculo_db?authSource=admin",
+        "db_name": "soat_veiculo_db"
+    }
+}
