@@ -1,0 +1,1162 @@
+type: collection.insomnia.rest/5.0
+name: SoapVeiculoV1
+meta:
+  id: wrk_06e735c984b041c3acedc7e5251ba966
+  created: 1757754971059
+  modified: 1757754971059
+collection:
+  - name: SOAT - Substitutiva
+    meta:
+      id: fld_a5feaf1fa8624049bf39786b3b11f858
+      created: 1757754971072
+      modified: 1757754971072
+      sortKey: -1751634339252.375
+    children:
+      - name: Fluxo completo
+        meta:
+          id: fld_7db8861ad27845d8860ccffd6aad0609
+          created: 1757754971073
+          modified: 1757754971073
+          sortKey: -1751034770982
+        children:
+          - url: http://127.0.0.1:8000/soat-vehicle/v1/veiculos
+            name: criar-veiculo
+            meta:
+              id: req_8ee628deaff642faac8c2b6ac94fce58
+              created: 1757754971073
+              modified: 1757754971073
+              isPrivate: false
+              sortKey: -1751038229262
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "marca": "Mazda",
+                  "modelo": "RX-7",
+                  "ano": 2006,
+                  "cor": "Laranja",
+                  "preco": 150000.00
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8001/compradores
+            name: cadastrar-comprador
+            meta:
+              id: req_b015f763e61144fe86f03b184d54546e
+              created: 1757754971074
+              modified: 1757754971074
+              isPrivate: false
+              sortKey: -1751038229237
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "Isabela Nunes",
+                  "cpf": "111.111.111-11",
+                  "email": "isafadinhagmail.com",
+                  "endereco": "Alphaville, Barueri-SP"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8002/vendas
+            name: venda-veiculo
+            meta:
+              id: req_da0744df39f846898b94d5374a0fb726
+              created: 1757754971079
+              modified: 1757754971079
+              isPrivate: false
+              sortKey: -1751038229232.3125
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "veiculo_id": "3a040ab1-b615-43a0-91f4-09403788f29e",
+                	"comprador_id": "d057aee3-05e4-47ec-83b4-b97e2aa5053c"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8003/pagamentos/15abd4e9/confirmar
+            name: confirmar-pagamento
+            meta:
+              id: req_f9d61146b719439889fa910f7458a24d
+              created: 1757754971079
+              modified: 1757754971079
+              isPrivate: false
+              sortKey: -1751038229227.625
+            method: POST
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8002/vendas/2e93ebad-1e68-493c-95b6-d444f8e0ea64/concluir
+            name: concluir-venda
+            meta:
+              id: req_7f927afe7d30484d8afc87553196c543
+              created: 1757754971080
+              modified: 1757754971080
+              isPrivate: false
+              sortKey: -1751038229127.625
+            method: POST
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: veiculos-service
+        meta:
+          id: ws-req_44b981cf15d148549f708b2c910708fd
+          created: 1757754971082
+          modified: 1757754971082
+          sortKey: -1751034741792
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+      - name: compradores-service
+        meta:
+          id: ws-req_26829f69202049ae801830a1bfd90602
+          created: 1757754971083
+          modified: 1757754971083
+          sortKey: -1751034770882
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+      - name: pagamentos-service
+        meta:
+          id: ws-req_39e3ec050f8349a9b0900b229d397603
+          created: 1757754971084
+          modified: 1757754971084
+          sortKey: -1751034756337
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+      - name: vendas-orquestrador
+        meta:
+          id: ws-req_b653fd39ba02428c883270125a28f259
+          created: 1757754971084
+          modified: 1757754971084
+          sortKey: -1751034749064.5
+        settings:
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+  - name: SoatResaleVeiculoV1
+    meta:
+      id: fld_a2e3f3afcc0e465b8b4537fa1137bec2
+      created: 1757754971085
+      modified: 1757754971085
+      sortKey: -1752633647943
+    children:
+      - url: http://127.0.0.1:8000/veiculos
+        name: SoatVeiculoCriar
+        meta:
+          id: req_e58eefb74f27421eb96b85d6ef154656
+          created: 1757754971085
+          modified: 1757754971085
+          isPrivate: false
+          sortKey: -1752633717704
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "marca": "Ford",
+              "modelo": "Maverick GT V8",
+              "ano": 1976,
+              "cor": "Amarelo",
+              "preco": 190000.00
+            }
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/veiculos/f6b8a458-35f0-40bc-ad15-a391a91846eb
+        name: SoatVeiculoBuscarPorID
+        meta:
+          id: req_ea3d6e0a3e35457dab15b4c6f7addf04
+          created: 1757754971085
+          modified: 1757754971085
+          isPrivate: false
+          sortKey: -1751835973483
+        method: GET
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/soat-vehicle/v1/veiculos/aec29b26-13c5-4fcf-8421-d353916c258d/venda
+        name: SoatVeiculoAtualizarStatusVendido
+        meta:
+          id: req_56f1d01b91e241acb8db1357506a6948
+          created: 1757754971086
+          modified: 1757754971086
+          isPrivate: false
+          sortKey: -1751088088275.8125
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "reservado": true
+            }
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/soat-vehicle/v1/veiculos/aec29b26-13c5-4fcf-8421-d353916c258d/reserva
+        name: SoatVeiculoAtualizarReserva
+        meta:
+          id: req_9aede8eed8e14d55bf4b13266ed22647
+          created: 1757754971086
+          modified: 1757754971086
+          isPrivate: false
+          sortKey: -1751137947289.625
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "reservado": true
+            }
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/veiculos/aec29b26-13c5-4fcf-8421-d353916c258d
+        name: SoatVeiculoBuscarPorIDMaverick
+        meta:
+          id: req_ee4f035a5a254db282bad24525038252
+          created: 1757754971086
+          modified: 1757754971086
+          isPrivate: false
+          sortKey: -1751437101372.5
+        method: GET
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/health/actuator
+        name: SoatVeiculoHealthActuator
+        meta:
+          id: req_34aac8572e0d47b4a10d906de58c497d
+          created: 1757754971087
+          modified: 1757754971087
+          isPrivate: false
+          sortKey: -1752633717804
+        method: GET
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: SoatResaleCompradorV1
+    meta:
+      id: fld_b37d16ca57584764afdc4949cc46a9dd
+      created: 1757754971087
+      modified: 1757754971087
+      sortKey: -1751834209462.5
+    children:
+      - url: http://127.0.0.1:8001/compradores
+        name: SoatCompradorCriar
+        meta:
+          id: req_64b65642063f43378d98b53dbdd42442
+          created: 1757754971087
+          modified: 1757754971087
+          isPrivate: false
+          sortKey: -1752633717704
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Isabela Nunes",
+              "cpf": "111.111.111-11",
+              "email": "isafadinhagmail.com",
+              "endereco": "Alphaville, Barueri-SP"
+            }
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8001/compradores/6ffa5cbd-341f-4a58-8819-fba415a0f80c
+        name: SoatCompradorBuscarPorID
+        meta:
+          id: req_baa632f1ea4e4f8ab8a88cdba9fe45ae
+          created: 1757754971088
+          modified: 1757754971088
+          isPrivate: false
+          sortKey: -1751835973483
+        method: GET
+        parameters:
+          - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+        headers:
+          - name: User-Agent
+            value: insomnia/8.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: SoatVeiculoV1
+    meta:
+      id: fld_5b6300e5ec044ffb8f0945b9d9a07302
+      created: 1757754971088
+      modified: 1757977758079
+      sortKey: -1752633648043
+    children:
+      - name: veiculos
+        meta:
+          id: fld_4d2152b0253449899f3e67e6bfc10d72
+          created: 1757860985048
+          modified: 1757898357429
+          sortKey: -1757873502380
+        children:
+          - url: "{{ _.BASE_URL }}/veiculos"
+            name: SoatVeiculoCriarMaverick
+            meta:
+              id: req_2ba53c38de35411fb70ff0f059c1ce59
+              created: 1757754971088
+              modified: 1757977698915
+              isPrivate: false
+              sortKey: -1757861007010
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "marca": "Ford",
+                  "modelo": "Maverick GT V8",
+                  "ano": 1976,
+                  "cor": "Amarelo",
+                  "preco": 190000.00
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/27f344d8-b204-48ae-a5a3-d01a4b97e315"
+            name: SoatVeiculoBuscarPorID
+            meta:
+              id: req_51cf526fa78c46c59d6a34a2c257e49e
+              created: 1757754971088
+              modified: 1757978115261
+              isPrivate: false
+              sortKey: -1757861006922.5
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/health/actuator"
+            name: SoatVeiculoHealthActuator
+            meta:
+              id: req_80e728c0bd0343f5a742a81077af4a74
+              created: 1757754971089
+              modified: 1757981943086
+              isPrivate: false
+              sortKey: -1757861007110
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/446c5409-95c2-4658-9ae3-2f5ada08c8d1/reservar"
+            name: SoatVeiculoStatusReservar
+            meta:
+              id: req_d098b72d32474ec7a30ed8bfbe9bcb75
+              created: 1757754971089
+              modified: 1757900276349
+              isPrivate: false
+              sortKey: -1757861006911.5625
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "reservado": true
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/0ae9adbe-c9a8-4aa4-92e4-c3e25fc8d968/vendido"
+            name: SoatVeiculoStatusVendido
+            meta:
+              id: req_428017c1e75f4838b1a2b6b095ee9bb3
+              created: 1757754971090
+              modified: 1757903120387
+              isPrivate: false
+              sortKey: -1757861006910.7812
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "reservado": true
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/446c5409-95c2-4658-9ae3-2f5ada08c8d1"
+            name: SoatVeiculoAtualizar
+            meta:
+              id: req_e9e4d19addc54e12a5977b6be63e4913
+              created: 1757754971090
+              modified: 1757861024410
+              isPrivate: false
+              sortKey: -1757861006935
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"marca": "Ford",
+                	"modelo": "Ford KA",
+                	"ano": 2005,
+                	"cor": "Cinza",
+                	"preco": 90000
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos"
+            name: SoatVeiculoCriarMustang
+            meta:
+              id: req_284620549e5144e3b99ab9817e6776a6
+              created: 1757754971091
+              modified: 1757861021802
+              isPrivate: false
+              sortKey: -1757861006960
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "marca": "Mustang",
+                  "modelo": "Mustang GT V8",
+                  "ano": 1982,
+                  "cor": "Vermelho",
+                  "preco": 100000.00
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/disponivel"
+            name: SoatVeiculoListarDisponivel
+            meta:
+              id: req_f379225fc91c44c286077cc521628a66
+              created: 1757754971091
+              modified: 1757979128367
+              isPrivate: false
+              sortKey: -1757861006916.25
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/vendidos"
+            name: SoatVeiculoListarVendido
+            meta:
+              id: req_44023fd0bc9f4fb5bb1c0c4310ae735e
+              created: 1757754971092
+              modified: 1757982271954
+              isPrivate: false
+              sortKey: -1757861006913.125
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/veiculos/446c5409-95c2-4658-9ae3-2f5ada08c8d1/reservar"
+            name: SoatVeiculoStatusReservar2
+            meta:
+              id: req_28703a68102e4d078231eaff2cc1c663
+              created: 1757901777868
+              modified: 1757901777868
+              isPrivate: false
+              sortKey: -1757861006911.1719
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "reservado": true
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL
+              }}/veiculos/0ae9adbe-c9a8-4aa4-92e4-c3e25fc8d968/cancelar/reserva"
+            name: SoatVeiculoStatusCancelarReserva
+            meta:
+              id: req_bbc640e4fe1d4500929dd77feefde1e0
+              created: 1757903220305
+              modified: 1757903229810
+              isPrivate: false
+              sortKey: -1755247362357.3906
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "reservado": true
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: compradores
+        meta:
+          id: fld_9f58bccfb02c43538246dcc999fd7da2
+          created: 1757861059489
+          modified: 1757898361094
+          sortKey: -1757873502330
+        children:
+          - url: "{{ _.BASE_URL_COMPRADOR }}/compradores/health/actuator"
+            name: SoatCompradorHealthActuator
+            meta:
+              id: req_76ad0b54b5e64e58802fbb749324ca70
+              created: 1757861102687
+              modified: 1757981952293
+              isPrivate: false
+              sortKey: -1757861108825
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_COMPRADOR }}/compradores"
+            name: SoatCompradorCadastrarGenivaldo
+            meta:
+              id: req_d25bfbd8b06441bc8ee0e6aea013fdd3
+              created: 1757861776288
+              modified: 1757978776914
+              isPrivate: false
+              sortKey: -1757861096110.625
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "Genivaldo Silva",
+                  "cpf": "111.111.111-11",
+                  "email": "genivaldo@gmail.com",
+                  "endereco": "Rua do nunca, 111, Barueri-SP"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_COMPRADOR
+              }}/compradores/848407d7-77ec-4a47-b84b-dc7d4732ccdc"
+            name: SoatCompradorBuscarPorId
+            meta:
+              id: req_a91fb3b693d74d6b81abccf0ff8f89d4
+              created: 1757861906878
+              modified: 1757978834265
+              isPrivate: false
+              sortKey: -1757861083396.25
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_COMPRADOR }}/compradores"
+            name: SoatCompradorCadastrarGumercindo
+            meta:
+              id: req_be6df59c4e894132bcf19d3dce8a08b0
+              created: 1757898215392
+              modified: 1757978778366
+              isPrivate: false
+              sortKey: -1757861089753.4375
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "Gumercindo Floriano",
+                  "cpf": "222.222.222-22",
+                  "email": "gumercindo.floriano@gmail.com",
+                  "endereco": "Rua sem fim, 222, Osasco-SP"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_COMPRADOR
+              }}/compradores/e2fac157-c214-4ece-9fcf-d4bb02605dff"
+            name: SoatCompradorBuscarPorIdGumercindo
+            meta:
+              id: req_87f14e20c0db4723b6b481416b453d95
+              created: 1757898303800
+              modified: 1757978781738
+              isPrivate: false
+              sortKey: -1757861045253.125
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: pagamentos
+        meta:
+          id: fld_d4cc554577534dcab23e475da6e33659
+          created: 1757871828120
+          modified: 1757898363912
+          sortKey: -1757873502305
+        children:
+          - url: "{{ _.BASE_URL_PAGAMENTO }}/pagamentos/health/actuator"
+            name: SoatPagamentoHealthActuator
+            meta:
+              id: req_1db48b05e91f431189e8193d41cf6647
+              created: 1757871846067
+              modified: 1757981959849
+              isPrivate: false
+              sortKey: -1757871857266
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_PAGAMENTO }}/pagamentos/14ddb6b6/confirmar"
+            name: SoatPagamentoPagar
+            meta:
+              id: req_b700e14baffc4b59884a5e48699c4aab
+              created: 1757872172260
+              modified: 1757980374635
+              isPrivate: false
+              sortKey: -1757866483045.5
+            method: PATCH
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_PAGAMENTO }}/pagamentos"
+            name: SoatPagamentoCriarPagamento
+            meta:
+              id: req_ec4ac1f17f754869ba1ccccec8f1652d
+              created: 1757872441747
+              modified: 1757872444850
+              isPrivate: false
+              sortKey: -1757869170155.75
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"venda_id": "{% faker 'randomUUID' %}",
+                	"comprador_id": "74ed041d-f13c-4b6c-9243-9b3e5bee4afd",
+                	"veiculo_id": "{% faker 'randomUUID' %}"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_PAGAMENTO }}/pagamentos/33c11e6e"
+            name: SoatPagamentoCriarPagamentoBuscarPorID
+            meta:
+              id: req_a6c208d9c94142ad887d623ab2a22708
+              created: 1757873387110
+              modified: 1757902904953
+              isPrivate: false
+              sortKey: -1757870513710.875
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_PAGAMENTO }}/pagamentos/1fdfa632/confirmar"
+            name: SoatPagamentoPagar2
+            meta:
+              id: req_59004d0ba79f40fa95186f9fbf6bded7
+              created: 1757902693200
+              modified: 1757903324462
+              isPrivate: false
+              sortKey: -1757863795935.25
+            method: PATCH
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: vendas
+        meta:
+          id: fld_984233b8bdd04c64a359d192cc12f430
+          created: 1757873502280
+          modified: 1757899173564
+          sortKey: -1757873502280
+        children:
+          - url: "{{ _.BASE_URL_VENDA }}/vendas/health/actuator"
+            name: SoatVendasHealthActuator
+            meta:
+              id: req_2b563455403f4d3792838bef4085cefd
+              created: 1757873553387
+              modified: 1757981167537
+              isPrivate: false
+              sortKey: -1757873564653
+            method: GET
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_VENDA
+              }}/vendas/ff462598-2f55-4836-b663-d246a4d7ad32/concluir"
+            name: SoatVendasConcluir
+            meta:
+              id: req_231d87deeae147079210e716d3573d48
+              created: 1757880636409
+              modified: 1757980360441
+              isPrivate: false
+              sortKey: -1757872284012.75
+            method: PATCH
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL_VENDA }}/vendas"
+            name: SoatVendaCriar
+            meta:
+              id: req_2e82d7c21c8a4038a799c5dffcba49a1
+              created: 1757899147756
+              modified: 1757980328200
+              isPrivate: false
+              sortKey: -1757872284112.75
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"veiculo_id": "27f344d8-b204-48ae-a5a3-d01a4b97e315",
+                	"comprador_id": "848407d7-77ec-4a47-b84b-dc7d4732ccdc"
+                }
+            parameters:
+              - id: pair_43f7a08e863e4cb09d3c6f0f4a4803ed
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/8.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5f67f34fe223422fadc134d02a8538bb
+    created: 1757754971070
+    modified: 1757754971070
+environments:
+  name: Base Environment
+  meta:
+    id: env_048251b466b34a8e83b1dff590490832
+    created: 1757754971066
+    modified: 1757759192577
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:8000/soat-veiculo/v1/veiculos
+  subEnvironments:
+    - name: SoapVeiculoV1Local
+      meta:
+        id: env_7aa5e1e95473419db85db2afccef27ef
+        created: 1757759111334
+        modified: 1757899360054
+        isPrivate: false
+        sortKey: 1757759111334
+      data:
+        BASE_URL: http://localhost:8000/soat-veiculo/v1
+        BASE_URL_VEICULO: http://localhost:8000/soat-veiculo/v1
+        BASE_URL_COMPRADOR: http://localhost:8001/soat-veiculo/v1
+        BASE_URL_PAGAMENTO: http://localhost:8002/soat-veiculo/v1
+        BASE_URL_VENDA: http://localhost:8003/soat-veiculo/v1
+    - name: SoapVeiculoV1Docker
+      meta:
+        id: env_dfba6d5f6d35442f9449d7387fd944fc
+        created: 1757896112313
+        modified: 1757896150426
+        isPrivate: false
+        sortKey: 1757759111384
+      data:
+        BASE_URL: http://localhost:8000/soat-veiculo/v1
+        BASE_URL_VEICULO: http://localhost:8000/soat-veiculo/v1
+        BASE_URL_COMPRADOR: http://localhost:8001/soat-veiculo/v1
+        BASE_URL_ORQUESTRADOR: http://localhost:8002/soat-veiculo/v1
+        BASE_URL_PAGAMENTO: http://localhost:8003/soat-veiculo/v1

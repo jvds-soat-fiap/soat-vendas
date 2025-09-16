@@ -25,7 +25,12 @@ K = TypeVar("K")
 
 
 
-config = AppConfig.from_json("./app/app-config.json")
+#config = AppConfig.from_json("./app/app-config.json")
+config = None
+try:
+    config = AppConfig.from_json("./app/app-config.json")
+except Exception as ex:
+    config = AppConfig.from_json("../app/app-config.json")
 db = None
 try:
     __engine_client = mongo_client.MongoClient(host=config.database.db_url, connectTimeoutMS=20000, socketTimeoutMS=20000)
